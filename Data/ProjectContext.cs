@@ -1,16 +1,23 @@
 using Microsoft.EntityFrameworkCore;
 using Project.Models;
-using Project.Authentication;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace Project.Data
 {
-    public class ProjectContext : DbContext
+    public class ProjectContext : IdentityDbContext<IdentityUser>
     {
+        public ProjectContext(DbContextOptions<ProjectContext> options) : base(options)
+        {
+        }
+
         public DbSet<Pizza> Pizzas => Set<Pizza>();
         public DbSet<Topping> Toppings => Set<Topping>();
         public DbSet<Sauce> Sauces => Set<Sauce>();
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-            => optionsBuilder.UseNpgsql("Host=localhost;Database=project;Username=postgres;Password=Trumgame9xqn98.");
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+        }
     }
 }

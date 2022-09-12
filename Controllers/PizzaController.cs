@@ -1,11 +1,11 @@
 using Project.Services;
 using Project.Models;
 using Microsoft.AspNetCore.Mvc;
-
+using Microsoft.AspNetCore.Authorization;
 namespace Project.Controllers;
-
+[Authorize]
 [ApiController]
-[Route("[controller]")]
+[Route("api/v1/[controller]")]
 public class PizzaController : ControllerBase
 {
     PizzaService _service;
