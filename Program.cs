@@ -1,5 +1,6 @@
 // Additional using declarations
 using Project.Data;
+using Project.Models;
 using Project.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -30,10 +31,10 @@ builder.Services.AddDbContext<ProjectContext>(options =>
            .UseSnakeCaseNamingConvention()
            .UseLoggerFactory(LoggerFactory.Create(builder => builder.AddConsole()))
            .EnableSensitiveDataLogging()
-  );
+);
 
 // Add identity model builder config
-builder.Services.AddIdentity<IdentityUser, IdentityRole>()
+builder.Services.AddIdentity<User, IdentityRole>()
                 .AddEntityFrameworkStores<ProjectContext>()
                 .AddDefaultTokenProviders();
 

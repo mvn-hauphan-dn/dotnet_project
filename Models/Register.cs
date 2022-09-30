@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Project.Models
 {
-    public class RegisterModel
+    public class Register
     {
         [Required(ErrorMessage = "User Name is required")]
         public string? Username { get; set; }
