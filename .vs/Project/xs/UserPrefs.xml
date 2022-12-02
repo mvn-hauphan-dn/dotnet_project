@@ -1,3 +1,26 @@
 ﻿<Properties StartupConfiguration="{BB557511-8594-42D1-9616-33AB77FBEF10}|Default">
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Project PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Controllers/AuthenticateController.cs">
+    <Files>
+      <File FileName="Controllers/AuthenticateController.cs" Line="20" Column="20" IsPinned="True" />
+      <File FileName="Services/IEmailService.cs" Line="9" Column="27" />
+      <File FileName="Controllers/EmailController.cs" />
+      <File FileName="appsettings.json" />
+      <File FileName="../.microsoft/usersecrets/bc8013d3-d7a5-4a60-b92f-491372496f30/secrets.json" Line="14" Column="2" />
+      <File FileName="Controllers/PizzaController.cs" />
+      <File FileName="Models/User.cs" />
+      <File FileName="Models/Topping.cs" />
+      <File FileName="Models/Sauce.cs" />
+      <File FileName="Dtos/Authenticates/ResetPasswordToken.cs" />
+      <File FileName="Data/ProjectContext.cs" />
+      <File FileName="Program.cs" />
+      <File FileName="Migrations/20220912082647_authenticate.Designer.cs" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
 </Properties>

@@ -51,3 +51,9 @@
 /Users/hau.phan/Project/bin/Debug/net6.0/MailKit.dll
 /Users/hau.phan/Project/bin/Debug/net6.0/MimeKit.dll
 /Users/hau.phan/Project/bin/Debug/net6.0/BouncyCastle.Crypto.dll
+/Users/hau.phan/Project/bin/Debug/net6.0/Microsoft.Extensions.DependencyInjection.dll
+/Users/hau.phan/Project/obj/Debug/net6.0/staticwebassets/msbuild.Project.Microsoft.AspNetCore.StaticWebAssets.props
+/Users/hau.phan/Project/obj/Debug/net6.0/staticwebassets/msbuild.build.Project.props
+/Users/hau.phan/Project/obj/Debug/net6.0/staticwebassets/msbuild.buildMultiTargeting.Project.props
+/Users/hau.phan/Project/obj/Debug/net6.0/staticwebassets/msbuild.buildTransitive.Project.props
+/Users/hau.phan/Project/obj/Debug/net6.0/staticwebassets.pack.json

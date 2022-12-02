@@ -7,10 +7,6 @@ namespace Project.Data
 {
     public class ProjectContext : IdentityDbContext<User>
     {   
-        static ProjectContext()
-        {
-             AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
-        }
         public ProjectContext(DbContextOptions<ProjectContext> options) : base(options)
         {
         }

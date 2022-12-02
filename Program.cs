@@ -10,12 +10,14 @@ using System.Text;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
+var config = builder.Configuration;
 
 // Add services to the container.
 builder.Services.AddControllers();
 
 // Add the PromotionsContext
 builder.Services.AddScoped<IEmailService, EmailService>();
+builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<PizzaService>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -49,7 +51,6 @@ builder.Services.AddSwaggerGen(option =>
 });
 
 // Database Config
-var config     = builder.Configuration;
 var DBHost     = config["Host"];
 var DBUserName = config["Username"];
 var DBDatabase = config["Database"];
@@ -71,11 +72,11 @@ builder.Services.AddIdentity<User, IdentityRole>()
 
 // Adding Authentication
 builder.Services.AddAuthentication(options =>
-    {
-        options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-        options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-        options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
-    })
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+})
 // Adding Jwt Bearer
                 .AddJwtBearer(options =>
 {
@@ -87,7 +88,8 @@ builder.Services.AddAuthentication(options =>
         ValidateAudience = true,
         ValidAudience = config["JWT:ValidAudience"],
         ValidIssuer = config["JWT:ValidIssuer"],
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config["JWT:Secret"]))
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config["JWT:Secret"])),
+        ValidateIssuerSigningKey = true
     };
 });
 
